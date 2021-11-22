@@ -1,0 +1,71 @@
+body{ margin: 0; padding: 0; text-decoration: none; }
+html { scroll-behavior: smooth; }
+*{ box-sizing: border-box; }
+a { text-decoration: none;}
+:root{
+    --yellow: #ffda4d;
+    --blue: #3b77a8;
+    --dark-blue: rgb(44, 44, 61);
+    --text-white: rgb(223, 223, 223);
+}
+/* Navbar styles -------------- */
+nav { height: 60px; background-color: var(--dark-blue); position: fixed; width: 100%; top: 0px;  padding: 0px 100px; }
+nav .nav-links a { color: var(--text-white); margin: 0px 20px; font-size: 13pt; }
+nav  h3 { color: var(--yellow); font-family: 'Fira Code', monospace; font-size: 14pt; margin-top: 5px; }
+nav .blue-dt { color: var(--blue); }
+nav .git-link a { color: var(--text-white); font-size: 16pt; }
+/* Home styles ---------------- */
+.home .home-banner { min-height: 350px; margin-top: 60px; background-color: rgb(37, 37, 37); padding: 0px 100px; }
+.home .home-banner h3 { color: var(--yellow); font-family: 'Fira Code', monospace; font-size: 35pt; }
+.home .home-banner .blue-dt { color: var(--blue); }
+.home .home-banner p { color: var(--text-white); text-align: center; width: 60%; font-size: 16pt; }
+.home .home-banner .get-started-btn { border: 2px solid var(--yellow); border-radius: 30px; background-color: transparent; padding: 7px 20px; color: var(--yellow); margin-top: 10px; }
+.home .about-cards { background-color: #f3f3f3; min-height: 358px; }
+.home .about-cards .ab-card { width: 220px; margin: 30px; text-align: center; }
+.home .about-cards .ab-card h4 { font-size: 14pt; color: var(--dark-blue); font-weight: 600; }
+.home .about-cards .ab-icon { font-size: 30pt; color: var(--blue); margin-bottom: 10px; }
+/* Documentation styles -------- */
+.documentation { padding: 0px 100px; background-color: #f3f3f3; min-height: 700px; }
+.documentation hr { margin-top: 0; background-color: var(--dark-blue); }
+.documentation .docs-container { width: 100%; padding-bottom: 40px; }
+.documentation .docs-container h3 { font-family: 'Fira Code', monospace; font-size: 15pt;}
+.blue-dark-dt {color: var(--dark-blue)}
+.documentation .docs-container .docs-content { width: 100%; margin-top: 40px; }
+.documentation .docs-container .docs-content .code-area { background-color: #282c34; width: 80%; padding: 20px; border-radius: 20px; }
+.face-img { width: 400px; }
+.documentation .docs-container .docs-content .code-explication { margin: 30px; }
+/* Get-started styles ---------- */
+.get-started { width: 100%; padding: 0px 100px 50px 100px; background-color: #f3f3f3; }
+.get-started hr { margin-top: 0; background-color: var(--dark-blue); }
+.get-started .gt-started-container  h3 { font-family: 'Fira Code', monospace; font-size: 15pt;}
+.get-started .gt-started-container  h4 { margin-top: 30px; color:var(--blue); font-family: 'Fira Code', monospace; font-size: 22pt;}
+.get-started .gt-started-container  h5 { color:var(--blue); font-family: 'Fira Code', monospace; font-size: 16pt;}
+.get-started .gt-started-container p { font-size: 13pt; }
+ul li code { color: #282c34; }
+/* Footer styles */
+footer { background-color: #1a1b1f; padding: 20px 0px; min-height: 120px; color: #f3f3f3; }
+.fa-python { color: var(--yellow); margin: 0px 10px; }
+
+@media (min-width: 320px) and (max-width: 800px) {
+    body { background-color: #f3f3f3; }
+    nav { padding: 0px 30px; }
+    nav .nav-links { display: none; }
+    .home .home-banner {padding: 0px;}
+    .home .home-banner h3{ font-size: 25pt;}
+    .documentation { padding: 0px 20px; }
+    .documentation .docs-content { width: 100%; flex-direction: column; align-items: center; padding: 0px; }
+     .documentation .docs-container { padding-bottom: 0px; }
+    .documentation .docs-container h3 { font-size: 11pt; }
+    .face-img { width: 250px; }
+    .code-area { width: 100%; font-size: 11pt; }
+    .get-started { padding: 0px 20px; }
+    .code-explication { text-align: center; }
+    footer { text-align: center; padding: 20px 0px; }
+    .get-started .gt-started-container  h3 { font-size: 11pt; }
+    .get-started .gt-started-container  h4 { font-size: 16pt; text-align: center;}
+    .get-started .gt-started-container  p { font-size: 12pt; text-align: center;}
+    ul { font-size: 12pt; margin-left: -20px; };
+
+}
+
+@media (max-width: 800px) {}
