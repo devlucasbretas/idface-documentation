@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iD Face - Uma ferramenta construida em python capaz de integrar o reconhecimento facial nos sistemas inteligentes da sua casa!">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <title>iD Face - Documentação</title>
+</head>
+<body>
+    <!-- Navbar starts -->
+    <nav id="nav" class="d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <h3>iD <span class="blue-dt">Face</span></h3>
+        <!-- Div with page links -->
+        <div class="nav-links">
+            <a href="javascript:void(window.scroll(0,720))">Documentação</a>
+            <a href="#get-started">Comece a Usar</a>
+        </div>
+        <!-- Div with link for github repository -->
+        <div class="git-link">
+            <a href="https://github.com/DouglasGesualdo/Face-recognition" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar ends -->
+    <main>
+        <!-- Section home starts-->
+        <section class="home">
+        <!-- Div home banner starts -->
+            <div  class="home-banner d-flex flex-column align-items-center justify-content-center">
+                <h3>iD <span class="blue-dt">Face</span></h3>
+                <p>Uma ferramenta construida em Python para facilitar o uso de reconhecimento facial.</p>
+                <a href="#get-started" class="get-started-btn">Comece a Usar <i class="fab fa-python"></i></a>
+            </div>
+            <!-- Div home banner ends -->
+            <!-- Div about cards starts -->
+            <div class="about-cards d-flex justify-content-center align-items-center flex-wrap">
+                <div class="ab-card d-flex flex-column align-items-center">
+                    <i class="fas ab-icon fa-code"></i>
+                    <h4>Estrutura Simples</h4>
+                    <p>Código de fácil entendimento e gerenciamento das imagens base.</p>
+                </div>
+                <div class="ab-card d-flex flex-column align-items-center">
+                    <i class="fas ab-icon fa-user-check"></i>
+                    <h4>Facilidade de Uso</h4>
+                    <p>Com poucas linhas de código seu reconhecimento facial está funcionando.</p>
+                </div>
+                <div class="ab-card d-flex flex-column align-items-center">
+                    <i class="fas ab-icon fa-sitemap"></i>
+                    <h4>Inúmeras Aplicabilidades</h4>
+                    <p>Você pode aplicar a ferramenta em qualquer sistema que utilize Python.</p>
+                </div>
+                <div  class="ab-card d-flex flex-column align-items-center">
+                    <i class="fas ab-icon fa-laptop-house"></i>
+                    <h4>Segurança Residencial</h4>
+                    <p>Integre a ferramenta nos mais variados sistemas inteligentes residenciais.</p>
+                </div>
+            </div>
+            <!-- Div about cards ends -->
+        </section> 
+        <!-- Section home ends-->
+        <!-- Section documentation starts -->
+        <section  class="documentation">
+         <hr>
+            <div  class="docs-container">
+                <h3> iD Face> <span class="blue-dark-dt">Documentação</span>> Importação das bibliotecas</h3>
+                <p>Documentação detalhada passo a passo:</p>
+                <div class="docs-content d-flex justify-content-between">
+                    <div class="code-area">
+                        <code>
+                            import face_recognition<br>
+                            import cv2<br>
+                            import numpy as np<br>
+                            <br>
+                            # Inserindo a captura de video<br>
+                            video_capture = cv2.VideoCapture(0)
+                            <br><br>
+                            # Carregando Imagens e reconhecendo as mesmas
+                            <br><br>
+                            img1_image = face_recognition.load_image_file("img1.jpeg")<br>
+                            img1_face_encoding = face_recognition.face_encodings(img1_image)[0]
+                            <br><br>
+                            img2_image = face_recognition.load_image_file("img2.jpeg")<br>
+                            img2_face_encoding = face_recognition.face_encodings(img2_image)[0]
+
+                        </code>
+                    </div>
+                    <div class="code-explication">
+                        <h4>Importação das bibliotecas necessárias</h4>
+                        <p>Primeiramente é feita as importações necessárias, nesse caso iremos precisar da face_recognition, cv2 e numpy.</p>
+                        <h4>Carregamento das imagens</h4>
+                        <p>Em seguida executamos o carregamento das imagens com os rostos a serem reconhecidos.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="docs-container">
+                <h3> iD Face> <span class="blue-dark-dt">Documentação</span>> Criando matrizes com rostos conhecidos</h3>
+                <p>Documentação detalhada passo a passo:</p>
+                <div class="docs-content d-flex justify-content-between">
+                    <div class="code-area">
+                        <code>
+                            #criando matrizes com os rostos conhecidos e nomeando<br>
+                            known_face_encodings = [<br>
+                                img1_face_encoding,<br>
+                                img2_face_encoding<br>
+                            ]<br>
+                            known_face_names = [<br>
+                                "Nome do Usuário 1",<br>
+                                "Nome do Usuário 2"<br>
+                            ]<br>
+                            #inicializando  variaveis<br>
+                            face_locations = []<br>
+                            face_encodings = []<br>
+                            face_names = []<br>
+                            process_this_frame = True<br>
+
+                        </code>
+                    </div>
+                    <div class="code-explication">
+                        <h4>Criando matrizes com rostos conhecidos</h4>
+                        <p>Neste momento são criadas matrizes com as imagens passadas, para que, o processamento e análise seja concluído. Além disso também são adicionados os nomes para serem atribuidos aos rostos.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="docs-container">
+                <h3> iD Face> <span class="blue-dark-dt">Documentação</span>> Processamento das imagens encontradas</h3>
+                <p>Documentação detalhada passo a passo:</p>
+                <div class="docs-content d-flex flex-column">
+                    <div class="code-area">
+                        <code>
+                            while True:<br>
+                            # Utilizando um frame do video<br>
+                            ret, frame = video_capture.read()<br>
+                            <br>
+                            # Redimensionando a imagem para 1/3 do tamanho para um reconhecimento mais veloz<br>
+                            small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)<br>
+                            <br>
+                            # Convertendo a imagem BGR para RGB<br>
+                            rgb_small_frame = small_frame[:, :, ::-1]<br>
+                            <br>
+                            # Processando frames alternados<br>
+                            if process_this_frame:<br>
+                                # Encontrando todos os rostos e codificações de rostos no frame atual<br>
+                                face_locations = face_recognition.face_locations(rgb_small_frame)<br>
+                                face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)<br>
+                                <br>
+                                face_names = []<br>
+                                for face_encoding in face_encodings:<br>
+                                    # Se caso não reconhecer rostos dar o nome de Desconhecido<br>
+                                    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)<br>
+                                    name = "Desconhecido"<br>
+                                    <br>
+                                    # # Caso reconheça, exibir o nome correspondente<br>
+                                    face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)<br>
+                                    best_match_index = np.argmin(face_distances)<br>
+                                    if matches[best_match_index]:<br>
+                                        name = known_face_names[best_match_index]<br>
+                                        <br>
+                                    face_names.append(name)<br>
+                                    <br>
+                            process_this_frame = not process_this_frame
+                        </code>
+                    </div>
+                    <div class="code-explication">
+                        <h4>Processamento das imagens encontradas</h4>
+                        <p>A ferramenta faz toda a análise e comparação de valores entre as imagens conhecidas, e determina se é um rosto que se encontra na sua base de imagens ou não.</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="docs-container">
+                <h3> iD Face> <span class="blue-dark-dt">Documentação</span>> Mostrando os resultados</h3>
+                <p>Documentação detalhada passo a passo:</p>
+                <div class="docs-content d-flex flex-column">
+                    <div class="code-area">
+                        <code>
+                                # Mostrando os resultados<br>
+                                for (top, right, bottom, left), name in zip(face_locations, face_names):<br>
+                                    # redimensionando para o tamanho normal<br>
+                                    top *= 4<br>
+                                    right *= 4<br>
+                                    bottom *= 4<br>
+                                    left *= 4<br>
+                                    <br>
+                                    # Desenhando um retangulo no rosto detectado<br>
+                                    cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)<br>
+                                    <br>
+                                    # Inserindo o nome abaixo do retangulo<br>
+                                    cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)<br>
+                                    font = cv2.FONT_HERSHEY_DUPLEX<br>
+                                    cv2.putText(frame, name, (left + 6, bottom - 6), font, 0.65, (255, 255, 255), 1)<br>
+                                <br>
+                                # Mostrando o resultado<br>
+                                cv2.imshow('Video', frame)<br>
+                                <br>
+                                # Aperte f para finalizar<br>
+                                if cv2.waitKey(1) & 0xFF == ord('f'):<br>
+                                    break<br>
+                                <br>
+                            # Desligando a webcam<br>
+                            video_capture.release()<br>
+                            cv2.destroyAllWindows()<br>
+                        </code>
+                    </div>
+                    <div class="code-explication">
+                        <h4>Mostrando os resultados</h4>
+                        <p>E finalmente temos os resultados obtidos através da análise dos rostos, se tudo estiver ok deveremos ter abaixo de cada imagem o nome de seu respectivo rosto.</p>
+                        <img class="face-img" src="./assets/img/reconhecimento-img.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section documentation ends -->
+        <!-- Section get-started starts -->
+        <section id="get-started" class="get-started">
+        <hr>
+            <div class="gt-started-container">
+                <h3> iD Face> <span class="blue-dark-dt">Get Started</span></h3>
+                <h4>Get-Started</h4>
+                <p>Ficou interessado e deseja começar a usar a nossa ferramenta agora mesmo?<br>É só escolher a modo que você mais gosta de clonar repositórios e aproveite!</p>
+                <ul><h5>Clone</h5>
+                    <ul><strong>HTTPS:</strong>
+                        <li><a href="https://github.com/DouglasGesualdo/Face-recognition.git">https://github.com/DouglasGesualdo/Face-recognition.git</a></li>
+                    </ul>
+                    <ul><strong>GitHub CLI:</strong>
+                        <li><code>gh repo clone DouglasGesualdo/Face-recognition</code></li>
+                    </ul>
+                    <ul><strong>Download Zip:</strong>
+                        <li><a href="https://github.com/DouglasGesualdo/Face-recognition/archive/refs/heads/main.zip">https://github.com/DouglasGesualdo/Face-recognition/archive/refs/heads/main.zip</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+        <!-- Section get-started ends -->
+    </main>
+    <footer class="d-flex flex-column align-items-center justify-content-center">
+    <p>&copy; Desenvolvido por :</p>
+        <p><i class="fab fa-python"></i> Lucas Bretas<br><i class="fab fa-python"></i> Douglas Gesualdo<br><i class="fab fa-python"></i> Luiz Fernando</p>
+    </footer>
+    <!-- dependencies of slick-carousel  -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- dependencies of bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- script for custon javascript -->
+    <script src="./js/app.js"></script>
+</body>
+</html>
